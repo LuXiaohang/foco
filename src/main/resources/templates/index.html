@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <!--Import Google Icon Font-->
@@ -12,7 +12,7 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refood</title>
+  <title>Foco</title>
 </head>
 
 <body>
@@ -36,10 +36,10 @@
               <a href="#">About</a>
             </li>
             <li>
-            <a href="/login.html" class="btn green modal-trigger">Login</a>
+              <a href="/login.html" class="btn green modal-trigger"><span th:text="${message}">Login</span></a>
             </li>
             <li>
-              <a href="https://facebook.com">
+              <a href="http://facebook.com">
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
@@ -75,7 +75,7 @@
               <div class="divider"></div>
             </li>
             <li>
-              <a href="/login.html" class="btn green">Login</a>
+              <a href="/login.html" class="btn green"><span th:text="${message}">Login</span></a>
             </li>
           </ul>
         </div>
@@ -109,30 +109,30 @@
       <div class="row">
         <div class="col s12 m3">
           <div class="card-panel">
-            <img src="img/zhuzhu.jpeg" alt="" class="circle responsive-img">
+            <img src="img/feedpeople.jpg" alt="" class="circle responsive-img">
             <h5 class="grey-text text-darken-4">Feed People</h5>
-            <p>Lorem ipsum dolor site amet consectetur, adipisicing elir. Quidem, velit</p>
+            <p>Distribute perishable and prepared foods to hungry people in communities.</p>
           </div>
         </div>
         <div class="col s12 m3">
           <div class="card-panel">
-            <img src="img/zhuzhu.jpeg" alt="" class="circle responsive-img">
+            <img src="img/feedanimal.jpg" alt="" class="circle responsive-img">
             <h5 class="grey-text text-darken-4">Feed Animal</h5>
-            <p>Lorem ipsum dolor site amet consectetur, adipisicing elir. Quidem, velit</p>
+            <p>With proper and safe handling, people can donate food scraps for animal feeding.</p>
           </div>
         </div>
         <div class="col s12 m3">
           <div class="card-panel">
-            <img src="img/zhuzhu.jpeg" alt="" class="circle responsive-img">
+            <img src="img/feedpeople.jpg" alt="" class="circle responsive-img">
             <h5 class="grey-text text-darken-4">Industrial Use</h5>
-            <p>Lorem ipsum dolor site amet consectetur, adipisicing elir. Quidem, velit</p>
+            <p>Biofuel can be gained from food waste to increase the use of alternative energy.</p>
           </div>
         </div>
         <div class="col s12 m3">
           <div class="card-panel">
-            <img src="img/zhuzhu.jpeg" alt="" class="circle responsive-img">
+            <img src="img/feedanimal.jpg" alt="" class="circle responsive-img">
             <h5 class="grey-text text-darken-4">Compost</h5>
-            <p>Lorem ipsum dolor site amet consectetur, adipisicing elir. Quidem, velit</p>
+            <p>Certain inedible parts of food waste can be turned into compost to nourish the soil.</p>
           </div>
         </div>
         
