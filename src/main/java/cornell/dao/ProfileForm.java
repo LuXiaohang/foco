@@ -7,11 +7,9 @@ import javax.persistence.Id;
 public class ProfileForm {
     @Id
     private String username;
-
     private String password;
 
-    public ProfileForm() {
-    }
+    public ProfileForm() {}
 
     public ProfileForm(String username, String password) {
         this.username = username;

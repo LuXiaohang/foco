@@ -19,7 +19,7 @@ public class FocoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception{
-        userRepository.save(new ProfileForm("owner","h2345"));
+        userRepository.save(new ProfileForm("owner","owner"));
         userRepository.save(new ProfileForm("owner1","h1234"));
         userRepository.save(new ProfileForm("owner2","h1235"));
         userRepository.save(new ProfileForm("owner3","h1245"));
