@@ -18,69 +18,62 @@
 <body>
   <!-- Header start -->
   <header class="main-header">
-    <nav class="transparent">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Foco</a>
-          <a href="#" data-target="slide-out" class="sidenav-trigger">
-            <i class="fa fa-bars"></i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="/index">Home</a>
-            </li>
-            <li>
-              <a href="#">Learn</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Suggest</a>
-            </li>
-            <li>
-              <a href="http://facebook.com">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-          <ul class="sidenav" id="slide-out">
-            <h4 class="green-text text-darken-4 center">Foco</h4>
-            <li>
-              <div class="divider"></div>
-            </li>
-            <li>
-              <a href="/index">
-                <i class="fa fa-home grey-text text-darken-4"></i>&nbsp;Home</a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-users grey-text text-darken-4"></i>&nbsp;Learn</a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-cog grey-text text-darken-4"></i>&nbsp;About</a>
-            </li>
-            <li>
-              <div class="divider"></div>
-            </li>
-            <li>
-              <a href="#">Suggest</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <nav class="transparent">
+          <div class="container">
+              <div class="nav-wrapper">
+                  <a href="#" class="brand-logo">Foco</a>
+                  <a href="#" data-target="slide-out" class="sidenav-trigger">
+                      <i class="fa fa-bars"></i>
+                  </a>
+                  <ul class="right hide-on-med-and-down">
+                      <li>
+                          <a href="/index">Home</a>
+                      </li>
+                      <li>
+                          <a href="/about">About</a>
+                      </li>
+                      <li>
+                          <a href="/suggestion" th:text="${message}">Suggest</a>
+                      </li>
+                      <li>
+                          <a href="http://facebook.com">
+                              <i class="fab fa-facebook"></i>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="https://twitter.com">
+                              <i class="fab fa-twitter"></i>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="https://instagram.com">
+                              <i class="fab fa-instagram"></i>
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="sidenav" id="slide-out">
+                      <h4 class="green-text text-darken-4 center">Foco</h4>
+                      <li>
+                          <div class="divider"></div>
+                      </li>
+                      <li>
+                          <a href="/index">
+                              <i class="fa fa-home grey-text text-darken-4"></i>&nbsp;Home</a>
+                      </li>
+                      <li>
+                          <a href="/about">
+                              <i class="fa fa-cog grey-text text-darken-4"></i>&nbsp;About</a>
+                      </li>
+                      <li>
+                          <div class="divider"></div>
+                      </li>
+                      <li>
+                          <a href="/suggestion" th:text="${message}">Suggest</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
 
     <!-- Showcase start -->
     <div class="showcase container">

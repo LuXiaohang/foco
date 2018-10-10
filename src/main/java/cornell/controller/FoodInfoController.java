@@ -32,7 +32,8 @@ public class FoodInfoController {
     public static String uploadDirectory = System.getProperty("user.dir")+"/uploads/";
 
     @RequestMapping("/foodInfoForm")
-    public String foodInfoForm(FoodInfo foodInfo){
+    public String foodInfoForm(FoodInfo foodInfo, Model model){
+        model.addAttribute("message","Suggest");
         return "uploadFoodInfo";
     }
 
@@ -53,7 +54,7 @@ public class FoodInfoController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        model.addAttribute("message","Suggest");
         return displayFoodInfo(model);
     }
 
@@ -73,6 +74,7 @@ public class FoodInfoController {
 
         }
         model.addAttribute("foodsLists",foodslists);
+        model.addAttribute("message","Suggest");
         return "foodInfo";
     }
 
@@ -90,6 +92,7 @@ public class FoodInfoController {
         List<FoodComment> foodComments = foodCommentRepository.findAllByFoodIdOrderByTimeDesc(id);
         model.addAttribute("foodInfo",foodInfo);
         model.addAttribute("foodComments",foodComments);
+        model.addAttribute("message","Suggest");
         return "foodDetail";
     }
 
@@ -98,7 +101,7 @@ public class FoodInfoController {
         comment.setFoodId(id);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
         foodCommentRepository.save(comment);
-        return getDetail(id,model,foodComment);
+        model.addAttribute("message","Suggest");
+        return "redirect:/detail/"+id;
     }
-
 }

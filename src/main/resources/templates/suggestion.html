@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foco</title>
+</head>
+
+<body>
+  <!-- Header start -->
+  <header class="main-header">
+    <nav class="transparent">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Foco</a>
+          <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="fa fa-bars"></i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="/index">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a class="active-link" href="/suggestion" th:text="${message}">Suggest</a>
+            </li>
+            <li>
+              <a href="http://facebook.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="sidenav" id="slide-out">
+            <h4 class="green-text text-darken-4 center">Foco</h4>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li>
+              <a href="/index">
+                <i class="fa fa-home grey-text text-darken-4"></i>&nbsp;Home</a>
+            </li>
+            <li>
+              <a href="/about">
+                <i class="fa fa-cog grey-text text-darken-4"></i>&nbsp;About</a>
+            </li>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li>
+              <a href="/suggestion" th:text="${message}">Suggest</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Showcase start -->
+    <div class="showcase container">
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="center-align" style="color: black">Suggest us</h4><br/>
+                        <form th:action="@{/insertSuggestion}" th:object="${suggestion}" onsubmit="return validate_form(this)" method="post">
+	                    <div class="row">
+	                        <div class="form-field col s12">
+	                          <label for="suggestion">What can we improve on this idea</label>
+	                          <textarea id="suggestion" class="materialize-textarea" th:field="${suggestion.ssuggestion}"></textarea>
+	                        </div>
+	                    </div>
+	                    <div class="form-field center-align">
+                            <button class="btn-large waves-effect waves-dark green" style="width: 50%" type="submit">Submit</button>
+                        </div><br/>
+                    </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Showcase end -->
+
+  </header>
+  <!-- Header end -->
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      //Init sidenav
+      $('.sidenav').sidenav();
+      //Init carousel
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+      });
+
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+
+    });
+    function validate_required(field,alerttxt)
+    {
+        with (field)
+        {
+            if (value==null||value=="")
+            {alert(alerttxt);return false}
+            else {return true}
+        }
+    }
+
+    function validate_form(thisform)
+    {
+        with (thisform)
+        {
+            if (validate_required(suggestion,"Suggestion must be filled out!")==false)
+            {suggestion.focus();return false}
+        }
+    }
+  </script>
+</body>
+
+</html>

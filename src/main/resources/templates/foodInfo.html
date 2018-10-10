@@ -30,13 +30,10 @@
               <a href="/index">Home</a>
             </li>
             <li>
-              <a href="#">Learn</a>
+              <a href="/about">About</a>
             </li>
             <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Suggest</a>
+              <a href="/suggestion" th:text="${message}">Suggest</a>
             </li>
             <li>
               <a href="http://facebook.com">
@@ -64,18 +61,14 @@
                 <i class="fa fa-home grey-text text-darken-4"></i>&nbsp;Home</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa fa-users grey-text text-darken-4"></i>&nbsp;Learn</a>
-            </li>
-            <li>
-              <a href="#">
+              <a href="/about">
                 <i class="fa fa-cog grey-text text-darken-4"></i>&nbsp;About</a>
             </li>
             <li>
               <div class="divider"></div>
             </li>
             <li>
-              <a href="#">Suggest</a>
+              <a href="/suggestion" th:text="${message}">Suggest</a>
             </li>
           </ul>
         </div>

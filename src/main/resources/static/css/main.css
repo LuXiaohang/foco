@@ -1,5 +1,5 @@
 .card-panel img {
-  height: 150px;
+  height: 100px;
   object-fit: cover;
 }
 .card-panel img.materialized.active {
