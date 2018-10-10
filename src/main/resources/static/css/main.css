@@ -1,3 +1,11 @@
+.card-panel img {
+  height: 150px;
+  object-fit: cover;
+}
+.card-panel img.materialized.active {
+  max-height: none;
+  object-fit: none;
+}
 .primary-overlay{
   background: rgba(10,10,10,0.7);
   position: absolute;

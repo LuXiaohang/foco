@@ -2,6 +2,7 @@ package cornell;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -22,5 +23,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                         "classpath:/static/css/",
                         "classpath:/static/js/",
                         "classpath:/static/fonts/roboto/");
+    }
+    @Override
+    public void configurePathMatch(PathMatchConfigurer matcher) {
+        matcher.setUseRegisteredSuffixPatternMatch(true);
     }
 }

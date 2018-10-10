@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foco</title>
+</head>
+
+<body>
+  <!-- Header start -->
+  <header class="main-header">
+    <nav class="transparent">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Foco</a>
+          <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="fa fa-bars"></i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="/index">Home</a>
+            </li>
+            <li>
+              <a href="#">Learn</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Suggest</a>
+            </li>
+            <li>
+              <a href="http://facebook.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="sidenav" id="slide-out">
+            <h4 class="green-text text-darken-4 center">Foco</h4>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li>
+              <a href="/index">
+                <i class="fa fa-home grey-text text-darken-4"></i>&nbsp;Home</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-users grey-text text-darken-4"></i>&nbsp;Learn</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-cog grey-text text-darken-4"></i>&nbsp;About</a>
+            </li>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li>
+              <a href="#">Suggest</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Section: Food Waste start -->
+  <section class="section section-language grey lighten-4">
+    <div class="container">
+      <h4 class="center">
+        <span class="green-text text-darken-1"> Recent Available Food</span>
+      </h4>
+      <div class="row" th:each="foodsList:${foodsLists}">
+        <div class="col s12 m4" th:each="food:${foodsList}">
+          <div class="card-panel">
+            <a th:href="@{detail/{foodId}(foodId=${food.id})}" target="_blank">
+            <img th:src="@{image/{imageName}(imageName=${food.img})}" alt="" class="responsive-img" style="border-radius: 3%">
+            <h5 class="grey-text text-darken-4" th:text="${food.foodType}">Missing</h5>
+            <span class="grey-text text-darken-4">SHARED BY: </span><span class="grey-text text-darken-4" th:text="${food.name}">Missing</span>
+            <br/><span class="grey-text text-darken-4">LOCATION: </span><span class="grey-text text-darken-4" th:text="${food.location}">Missing</span>
+            <p class="grey-text text-darken-4" th:text="${food.description}">Missing</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Food Waste end -->
+  </header>
+  <!-- Header end -->
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      //Init sidenav
+      $('.sidenav').sidenav();
+      //Init carousel
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+      });
+
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+
+    });
+  </script>
+</body>
+
+</html>

@@ -30,7 +30,7 @@ public class FocoController{
         return "index";
     }
 
-    @RequestMapping(value = "/loginSuccess",method = RequestMethod.POST)
+    @RequestMapping(value = "/loginSuccessAdmin",method = RequestMethod.POST)
     public String loginSuccess(ProfileForm profileForm,Model model){
         String username = profileForm.getUsername();
         String password = profileForm.getPassword();
@@ -42,16 +42,4 @@ public class FocoController{
         return "404";
     }
 
-    @RequestMapping(value = "/signupSuccess",method = RequestMethod.POST)
-    public String signupSuccess(ProfileForm profileForm,Model model){
-        String username = profileForm.getUsername();
-        String password = profileForm.getPassword();
-        Optional<ProfileForm> user = userRepository.findById(username);
-        if(user.isPresent()) {
-            return "signup";
-        }
-        userRepository.save(new ProfileForm(username,password));
-        model.addAttribute("message",username);
-        return "index";
-    }
 }
