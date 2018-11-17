@@ -12,7 +12,7 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foco</title>
+  <title>FOCO</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
       <nav class="transparent">
           <div class="container">
               <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">Foco</a>
+                  <a href="/index" class="brand-logo">FOCO</a>
                   <a href="#" data-target="slide-out" class="sidenav-trigger">
                       <i class="fa fa-bars"></i>
                   </a>
@@ -35,24 +35,24 @@
                       <li>
                           <a href="/suggestion" th:text="${message}">Suggest</a>
                       </li>
-                      <li>
-                          <a href="http://facebook.com">
-                              <i class="fab fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="https://twitter.com">
-                              <i class="fab fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="https://instagram.com">
-                              <i class="fab fa-instagram"></i>
-                          </a>
-                      </li>
+                      <!--<li>-->
+                          <!--<a href="http://facebook.com">-->
+                              <!--<i class="fab fa-facebook"></i>-->
+                          <!--</a>-->
+                      <!--</li>-->
+                      <!--<li>-->
+                          <!--<a href="https://twitter.com">-->
+                              <!--<i class="fab fa-twitter"></i>-->
+                          <!--</a>-->
+                      <!--</li>-->
+                      <!--<li>-->
+                          <!--<a href="https://instagram.com">-->
+                              <!--<i class="fab fa-instagram"></i>-->
+                          <!--</a>-->
+                      <!--</li>-->
                   </ul>
                   <ul class="sidenav" id="slide-out">
-                      <h4 class="green-text text-darken-4 center">Foco</h4>
+                      <h4 class="green-text text-darken-4 center">FOCO</h4>
                       <li>
                           <div class="divider"></div>
                       </li>
@@ -76,40 +76,41 @@
       </nav>
 
     <!-- Showcase start -->
-    <div class="showcase container">
+    <div class="showcase container suggestionshowcase">
         <div class="row">
             <div class="col s12 m10 offset-m1">
                 <div class="card">
                     <div class="card-content">
-                        <h4 class="center-align" style="color: black">Food Infomation</h4><br/>
+                        <h5 class="center-align" style="color: black">Upload Food Infomation</h5><br/>
                         <form th:action="@{/uploadFoodInfo}" th:object="${foodInfo}" onsubmit="return validate_form(this)" method="post" enctype="multipart/form-data">
                         <div class="row">
                         <div class="form-field col m5 s12">
-                            <label for="name">Shared By</label>
-                            <input id="name" th:field="${foodInfo.name}" type="text" class="validate">
+                            <label for="name" class="mat-label">Shared By<font color="#ffb3b3"> *</font></label>
+                            <input id="name" th:field="${foodInfo.name}" type="text" class="validate mat-input">
                         </div>
                         <div class="form-field col m7 s12">
-                            <label for="foodType">Food Type, e.g. sandwich</label>
-                            <input id="foodType" th:field="${foodInfo.foodType}" type="text" class="validate">
+                            <label for="foodType" class="mat-label">Food Type, e.g. sandwich<font color="#ffb3b3"> *</font></label>
+                            <input id="foodType" th:field="${foodInfo.foodType}" type="text" class="validate mat-input">
                         </div>
                    		</div>
 	                    <div class="row">
 	                        <div class="form-field col s12">
-	                          <label for="location">Location, e.g. Cornell Tech Tata Second Floor</label>
-	                          <textarea id="location" class="materialize-textarea" th:field="${foodInfo.location}"></textarea>
+	                          <label for="location" class="mat-label">Location, e.g. Cornell Tech Tata Second Floor<font color="#ffb3b3"> *</font></label>
+	                          <textarea id="location" class="materialize-textarea mat-input" th:field="${foodInfo.location}"></textarea>
 	                        </div>
 	                    </div>
 	                    <div class="row">
 	                        <div class="form-field col s12">
-	                          <label for="description">&nbsp;Description, e.g. quality, quantity, use by date</label>
-	                          <textarea id="description" class="materialize-textarea" th:field="${foodInfo.description}" style="border: 1px solid;display: block;height: 150px"></textarea>
+	                          <label for="description" class="mat-label">&nbsp;Description, e.g. quality, quantity, use by date<font color="#ffb3b3"> *</font></label>
+	                          <textarea id="description" class="materialize-textarea mat-input" th:field="${foodInfo.description}" style="border: 1px solid;display: block;height: 150px"></textarea>
 	                        </div>
 	                    </div>
 	                    <div class="row">
 	                        <div class="form-field col s12">
-                                <label>Upload Image<input type ="file" name="file"></label>
+                                <label class="mat-label">Upload Image<font color="#ffb3b3"> * </font><input type ="file" name="file"></label>
 	                        </div>
 	                    </div>
+                            <br/>
 	                    <div class="form-field center-align">
                             <button class="btn-large waves-effect waves-dark green" style="width: 50%" type="submit">Submit</button>
                         </div><br/>

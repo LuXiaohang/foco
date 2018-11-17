@@ -12,7 +12,7 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foco</title>
+  <title>FOCO</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <nav class="transparent">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Foco</a>
+          <a href="/index" class="brand-logo">FOCO</a>
           <a href="#" data-target="slide-out" class="sidenav-trigger">
             <i class="fa fa-bars"></i>
           </a>
@@ -35,24 +35,24 @@
             <li>
               <a href="/suggestion" th:text="${message}">Suggest</a>
             </li>
-            <li>
-              <a href="http://facebook.com">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
+            <!--<li>-->
+              <!--<a href="http://facebook.com">-->
+                <!--<i class="fab fa-facebook"></i>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="https://twitter.com">-->
+                <!--<i class="fab fa-twitter"></i>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="https://instagram.com">-->
+                <!--<i class="fab fa-instagram"></i>-->
+              <!--</a>-->
+            <!--</li>-->
           </ul>
           <ul class="sidenav" id="slide-out">
-            <h4 class="green-text text-darken-4 center">Foco</h4>
+            <h4 class="green-text text-darken-4 center">FOCO</h4>
             <li>
               <div class="divider"></div>
             </li>
@@ -79,12 +79,15 @@
     <div class="showcase container">
       <div class="row">
         <div class="col s12 m10 offset-m1 center">
-          <h5>The best way to reduce food waste is</h5>
-          <h2>Eat It</h2>
-          <br>
-          <br>
+          <br/>
+          <h4>The best way to reduce food waste is EAT it</h4>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <a href="/foodInfoForm" class="btn btn-large white green-text col s12 m6"><b>Give Food</b></a>
-          <a href="/displayFoodInfo" class="btn btn-large green white-text col s12 m6"><b>Want Food</b></a>
+          <a href="/displayFoodInfo" class="btn btn-large green white-text col s12 m6"><b>Find Food</b></a>
         </div>
       </div>
     </div>
@@ -93,52 +96,70 @@
   </header>
   <!-- Header end -->
 
- <!-- Section: Food Waste start -->
-  <section class="section section-language grey lighten-4">
-    <div class="container">
-      <h4 class="center">Work With
-        <span class="green-text text-darken-1"> Food Waste</span>
-      </h4>
-      <div class="row">
-        <div class="col s12 m3">
-          <div class="card-panel">
-            <img src="img/feedpeople.jpg" alt="" class="circle responsive-img">
-            <h5 class="grey-text text-darken-4">Feed People</h5>
-            <p>Distribute perishable and prepared foods to hungry people in communities.</p>
-          </div>
-        </div>
-        <div class="col s12 m3">
-          <div class="card-panel">
-            <img src="img/feedanimal.jpg" alt="" class="circle responsive-img">
-            <h5 class="grey-text text-darken-4">Feed Animal</h5>
-            <p>With proper and safe handling, people can donate food scraps for animal feeding.</p>
-          </div>
-        </div>
-        <div class="col s12 m3">
-          <div class="card-panel">
-            <img src="img/biofuel.jpg" alt="" class="circle responsive-img">
-            <h5 class="grey-text text-darken-4">Industrial Use</h5>
-            <p>Biofuel can be gained from food waste to increase the use of alternative energy.</p>
-          </div>
-        </div>
-        <div class="col s12 m3">
-          <div class="card-panel">
-            <img src="img/compost.jpg" alt="" class="circle responsive-img">
-            <h5 class="grey-text text-darken-4">Compost</h5>
-            <p>Certain inedible parts of food waste can be turned into compost to nourish the soil.</p>
-          </div>
-        </div>
-        
+  <!-- Section: Food Waste start -->
+  <section class="section section-language lighten-4">
+  <div class="container">
+  <h4 class="center">How <span class="green-text text-darken-1"> FOCO </span>
+  Works
+  </h4>
+  <div class="row">
+
+  <div class="col s12 m4">
+    <div class="card medium">
+      <div class="card-image waves-effect waves-block waves-light usecase">
+        <img src="img/sharefood.png" alt="">
+      </div>
+      <br/>
+      <br/>
+      <div class="card-content usecasetext">
+        <span class="card-title grey-text text-darken-4" style="text-align: center!important;"><b style="font-size: 17px;font-weight: bold">Share Food</b></span>
+        <p>Come across leftovers from a catered event?<br/>
+          Share it with the community!</p>
       </div>
     </div>
+  </div>
+
+    <div class="col s12 m4">
+      <div class="card medium">
+        <div class="card-image waves-effect waves-block waves-light usecase">
+          <img src="img/givefood.png" alt="">
+        </div>
+        <br/>
+        <br/>
+        <div class="card-content usecasetext">
+          <span class="card-title grey-text text-darken-4" style="text-align: center!important;"><b style="font-size: 17px;font-weight: bold">Give Food</b></span>
+          <p>Have a fridge full of food and you don’t have time to eat?<br/>
+            Give it to friends instead of throwing it away!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="card medium">
+        <div class="card-image waves-effect waves-block waves-light usecase">
+          <img src="img/findfood.png" alt="">
+        </div>
+        <br/>
+        <br/>
+        <div class="card-content usecasetext">
+          <span class="card-title grey-text text-darken-4" style="text-align: center!important;"><b style="font-size: 17px;font-weight: bold">Find Food</b></span>
+          <p>Who doesn’t love free food?<br/>
+            Find out what’s available in your community!</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
   </section>
-  <!-- Section: Food Waste end -->
+   <!--Section: Food Waste end -->
 
   <!-- Footer start -->
   <footer class="page-footer main-footer">
     <div class="footer-copyright">
       <div class="container">
-        <a class="white-text left" href="#!">Foco &copy; 2018</a>
+        <a class="white-text left" href="#!">FOCO &copy; 2018</a>
         <a class="white-text right" href="#!">Hanyu & Xiaohang</a>
       </div>
     </div>

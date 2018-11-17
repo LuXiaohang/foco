@@ -31,12 +31,6 @@ public class FocoApplication implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception{
         new File(FoodInfoController.uploadDirectory).mkdir();
-        userRepository.save(new ProfileForm("owner","ownerhijack"));
         foodInfoRepository.save(new FoodInfo("name1","foodType","location","description","zhuzhu.jpeg"));
-        foodInfoRepository.save(new FoodInfo("name2","foodType","location","description","zhuzhu.jpeg"));
-        foodInfoRepository.save(new FoodInfo("name3","foodType","location","description","zhuzhu.jpeg"));
-        foodInfoRepository.save(new FoodInfo("name4","foodType","location","description","zhuzhu.jpeg"));
-        foodInfoRepository.save(new FoodInfo("name5","foodType","location","description","zhuzhu.jpeg"));
-        foodInfoRepository.save(new FoodInfo("name6","foodType","location","description","zhuzhu.jpeg"));
     }
 }

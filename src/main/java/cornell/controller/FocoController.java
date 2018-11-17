@@ -1,8 +1,7 @@
 package cornell.controller;
 
-import java.util.Optional;
 import java.util.List;
-import cornell.dao.ProfileForm;
+
 import cornell.dao.ProfileFormRepository;
 import cornell.dao.Suggestion;
 import cornell.dao.SuggestionRepository;
@@ -20,12 +19,6 @@ public class FocoController{
 
     @Autowired
     private SuggestionRepository suggestionRepository;
-
-//    @RequestMapping("/signup")
-//    public String signup(ProfileForm profileForm){ return "signup"; }
-//
-//    @RequestMapping("/login")
-//    public String login(ProfileForm profileForm){ return "login"; }
 
     @RequestMapping("/index")
     public String index(Model model){
@@ -59,16 +52,5 @@ public class FocoController{
         return "index";
     }
 
-//    @RequestMapping(value = "/loginSuccessAdmin",method = RequestMethod.POST)
-//    public String loginSuccess(ProfileForm profileForm,Model model){
-//        String username = profileForm.getUsername();
-//        String password = profileForm.getPassword();
-//        Optional<ProfileForm> user = userRepository.findById(username);
-//        if(user.isPresent()&&user.get().getPassword().equals(password)){
-//            model.addAttribute("message",username);
-//            return "index";
-//        }
-//        return "404";
-//    }
 
 }

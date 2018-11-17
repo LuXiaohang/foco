@@ -10,12 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -31,6 +31,10 @@ public class FoodInfoController {
 
     public static String uploadDirectory = System.getProperty("user.dir")+"/uploads/";
 
+    int length = 5;
+    boolean useLetters = true;
+    boolean useNumbers = true;
+
     @RequestMapping("/foodInfoForm")
     public String foodInfoForm(FoodInfo foodInfo, Model model){
         model.addAttribute("message","Suggest");
@@ -45,9 +49,11 @@ public class FoodInfoController {
         try {
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(uploadDirectory + file.getOriginalFilename());
+            String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
+            String name = file.getOriginalFilename()+generatedString;
+            Path path = Paths.get(uploadDirectory + name);
             Files.write(path, bytes);
-            foodInfo.setImg(file.getOriginalFilename());
+            foodInfo.setImg(name);
             System.out.println(path.toString());
             foodInfo.setTime(new Timestamp(System.currentTimeMillis()));
             foodInfoRepository.save(foodInfo);
@@ -66,6 +72,9 @@ public class FoodInfoController {
         List<List<FoodInfo>> foodslists = new LinkedList<List<FoodInfo>>();
         List<FoodInfo> tmpList = new LinkedList<>();
         for(int i=0;i<foods.size();i++){
+            if(foods.get(i).getLocation().length()>50){
+                foods.get(i).setLocation(foods.get(i).getLocation().substring(0,50).concat("..."));
+            }
             tmpList.add(foods.get(i));
             if(tmpList.size()==3||i+1==foods.size()){
                 foodslists.add(new ArrayList<>(tmpList));

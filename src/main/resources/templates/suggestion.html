@@ -12,7 +12,7 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foco</title>
+  <title>FOCO</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <nav class="transparent">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Foco</a>
+          <a href="/index" class="brand-logo">FOCO</a>
           <a href="#" data-target="slide-out" class="sidenav-trigger">
             <i class="fa fa-bars"></i>
           </a>
@@ -35,24 +35,24 @@
             <li>
               <a class="active-link" href="/suggestion" th:text="${message}">Suggest</a>
             </li>
-            <li>
-              <a href="http://facebook.com">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
+            <!--<li>-->
+              <!--<a href="http://facebook.com">-->
+                <!--<i class="fab fa-facebook"></i>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="https://twitter.com">-->
+                <!--<i class="fab fa-twitter"></i>-->
+              <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="https://instagram.com">-->
+                <!--<i class="fab fa-instagram"></i>-->
+              <!--</a>-->
+            <!--</li>-->
           </ul>
           <ul class="sidenav" id="slide-out">
-            <h4 class="green-text text-darken-4 center">Foco</h4>
+            <h4 class="green-text text-darken-4 center">FOCO</h4>
             <li>
               <div class="divider"></div>
             </li>
@@ -76,17 +76,17 @@
     </nav>
 
     <!-- Showcase start -->
-    <div class="showcase container">
+    <div class="showcase container suggestionshowcase">
         <div class="row">
             <div class="col s12 m10 offset-m1">
                 <div class="card">
                     <div class="card-content">
-                        <h4 class="center-align" style="color: black">Suggest us</h4><br/>
+                        <h5 class="center-align" style="color: black">Suggestions</h5><br/>
                         <form th:action="@{/insertSuggestion}" th:object="${suggestion}" onsubmit="return validate_form(this)" method="post">
 	                    <div class="row">
 	                        <div class="form-field col s12">
-	                          <label for="suggestion">What can we improve on this idea</label>
-	                          <textarea id="suggestion" class="materialize-textarea" th:field="${suggestion.ssuggestion}"></textarea>
+	                          <label class="mat-label" for="suggestion">Drop us a note! Help us improve on this product!</label>
+	                          <textarea id="suggestion" class="materialize-textarea mat-input" style="height: 150px;" th:field="${suggestion.ssuggestion}"></textarea>
 	                        </div>
 	                    </div>
 	                    <div class="form-field center-align">
