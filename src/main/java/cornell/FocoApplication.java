@@ -3,19 +3,17 @@ package cornell;
 import cornell.controller.FoodInfoController;
 import cornell.dao.FoodInfo;
 import cornell.dao.FoodInfoRepository;
-import cornell.dao.ProfileForm;
 import cornell.dao.ProfileFormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.context.ApplicationContext;
+import java.util.Arrays;
 
 import java.io.File;
 
 @SpringBootApplication
-@ComponentScan({"cornell","cornell.controller"})
 public class FocoApplication implements CommandLineRunner {
 
     @Autowired
@@ -25,7 +23,15 @@ public class FocoApplication implements CommandLineRunner {
     private FoodInfoRepository foodInfoRepository;
 
     public static void main(String[] args) {
-        SpringApplication.run(FocoApplication.class, args);
+        ApplicationContext ctx =SpringApplication.run(FocoApplication.class, args);
+
+        String[] beanNames = ctx.getBeanDefinitionNames();
+
+        Arrays.sort(beanNames);
+
+        for (String beanName : beanNames) {
+            System.out.println(beanName);
+        }
     }
 
     @Override

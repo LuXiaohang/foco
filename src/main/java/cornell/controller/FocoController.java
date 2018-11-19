@@ -26,6 +26,12 @@ public class FocoController{
         return "index";
     }
 
+    @RequestMapping("/")
+    public String home(Model model){
+        model.addAttribute("message","Suggest");
+        return "index";
+    }
+
     @RequestMapping("/about")
     public String about(Model model) {
         model.addAttribute("message","Suggest");
