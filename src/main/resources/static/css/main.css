@@ -1,11 +1,21 @@
 .detailImage{
-  height: 30vh!important;
+  height: 35vh!important;
+  width: 100%!important;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  object-position: 50% 50%;
 }
 .wasteImage{
   height: 20vh!important;
 }
-.infoImage{
-  height: 10vh!important;
+.infoimage{
+  height: 21vh!important;
+  width: 100%!important;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .usecase{
   width: 100px!important;
@@ -18,7 +28,9 @@
   text-align: left;
 }
 .cardheight{
-  height: 350px!important;
+  height: 50vh!important;
+  width: 100%;
+  overflow: hidden;
 }
 .mat-label {
   display: block;

@@ -29,14 +29,15 @@ public class FocoApplication implements CommandLineRunner {
 
         Arrays.sort(beanNames);
 
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+//        for (String beanName : beanNames) {
+//            System.out.println(beanName);
+//        }
     }
 
     @Override
     public void run(String... strings) throws Exception{
         new File(FoodInfoController.uploadDirectory).mkdir();
-        foodInfoRepository.save(new FoodInfo("name1","foodType","location","description","zhuzhu.jpeg"));
+        foodInfoRepository.save(new FoodInfo("Yee","Sandwich and bacon","Bloomberg auditorium","Seminar food left over.","food3.jpg"));
+        foodInfoRepository.save(new FoodInfo("Shawn","Bread","tata second floor","Breakfast for sprint, come get it.","food2.jpg"));
     }
 }

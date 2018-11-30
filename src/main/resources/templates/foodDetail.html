@@ -80,9 +80,9 @@
     <div class="showcase container">
         <div class="class card-panel">
             <div class = "row">
-                <div class="col s12 m5">
-                    <div class = "card-image detailImage">
-                        <img th:src="@{~/image/{imageName}(imageName=${foodInfo.img})}" alt="" class="square responsive-img">
+                <div class="col s12 m5" style="overflow: hidden;">
+                    <div class = "card-image">
+                        <img th:src="@{~/image/{imageName}(imageName=${foodInfo.img})}" alt="" class="square responsive-img detailImage" style="border-radius: 3%">
                     </div>
 
                 </div>

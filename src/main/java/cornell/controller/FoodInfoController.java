@@ -72,6 +72,9 @@ public class FoodInfoController {
         List<List<FoodInfo>> foodslists = new LinkedList<List<FoodInfo>>();
         List<FoodInfo> tmpList = new LinkedList<>();
         for(int i=0;i<foods.size();i++){
+            if(foods.get(i).getFoodType().length()>20){
+                foods.get(i).setFoodType(foods.get(i).getFoodType().substring(0,20).concat("..."));
+            }
             if(foods.get(i).getLocation().length()>50){
                 foods.get(i).setLocation(foods.get(i).getLocation().substring(0,50).concat("..."));
             }
